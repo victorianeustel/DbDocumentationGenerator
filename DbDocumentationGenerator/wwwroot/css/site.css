@@ -1,0 +1,241 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+a img {
+    border: 0
+}
+
+input::-ms-clear {
+    display: none
+}
+
+body {
+    font-family: -apple-system,Segoe UI,Open Sans,Arial,sans-serif;
+    font-size: 14px
+}
+
+a {
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    color: #4679c6;
+    text-decoration: none
+}
+
+a:hover {
+    color: #04589f
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 700
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 18px
+    }
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: 700
+}
+
+.no-wrap {
+    white-space: nowrap
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0,0,0,.05)
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2872ec;
+    background-color: rgba(0,0,0,.3);
+    background-clip: content-box
+}
+
+.doc {
+    padding: 15px 20px
+}
+
+.doc-breadcrumb {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 15px
+}
+
+.doc-actions {
+    z-index: 99;
+    position: relative;
+    float: right;
+    font-size: 12px
+}
+
+.doc-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 15px
+}
+
+.doc-header [class^=icon] {
+    margin-right: 10px
+}
+
+.doc-summary {
+    font-size: 13px;
+    margin-bottom: 25px
+}
+
+.doc-summary td, .doc-summary th {
+    vertical-align: top
+}
+
+.doc-summary-field {
+    text-align: left;
+    padding: 3px 20px 3px 0
+}
+
+.doc-list {
+    list-style-type: decimal;
+    margin-left: 15px
+}
+
+.doc-list > li {
+    padding: 5px 0
+}
+
+.doc-description {
+    margin-bottom: 40px
+}
+
+.doc-description ul {
+    margin-left: 40px
+}
+
+.doc-section {
+    padding-bottom: 25px
+}
+
+.doc-section.no-margin {
+    margin-bottom: 0
+}
+
+.doc-section-header {
+    margin-bottom: 10px
+}
+
+div.doc-script {
+    overflow-x: auto;
+    border: 1px solid #dbe3f3;
+    font-size: 13px
+}
+
+div.doc-script code {
+    padding: 6px 20px !important
+}
+
+td.doc-script {
+    font-size: 13px
+}
+
+td.doc-script code {
+    padding: 0 !important
+}
+
+.doc-metadata {
+    color: #999;
+    font-size: 13px;
+    margin-top: 25px;
+    margin-bottom: 25px
+}
+
+.doc-metadata-exported {
+    margin-right: 10px
+}
+
+.sticky-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 9
+}
+
+.table {
+    overflow-x: auto
+}
+
+.table table {
+    border-collapse: collapse;
+    border: 1px solid #dbe3f3
+}
+
+.table table th {
+    background: #dbe3f3;
+    text-align: left
+}
+
+.table table td, .table table th {
+    border-bottom: 1px solid #dbe3f3;
+    font-size: 13px;
+    padding: 6px 20px 6px 0;
+    vertical-align: top
+}
+
+.table table td:first-child, .table table th:first-child {
+    padding-left: 20px
+}
+
+.v-header {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    padding: 5px 0;
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    cursor: pointer;
+    color: #4679c6;
+    margin: 0
+}
+
+.v-header-icon {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin-right: 5px;
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s,-webkit-transform .2s
+}
+
+.v-header-icon.is-expanded {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.v-header-slot {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}

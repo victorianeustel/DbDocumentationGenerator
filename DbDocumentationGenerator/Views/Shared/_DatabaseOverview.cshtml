@@ -1,0 +1,58 @@
+﻿@model Database
+
+<div id="database-header">
+    <h1>@Model.Name</h1>
+</div>
+<div class="v-content">
+    <div class="doc">
+        <div class="sticky-header"><h1 class="doc-header">@Model.Name</h1></div>
+        <table class="doc-summary">
+            <tr>
+                <th class="doc-summary-field">
+                    @Model.Host
+                </th>
+                <td class="doc-summary-value">
+                    <span class="v-item">
+                        <span>host</span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th class="doc-summary-field">
+                    Database
+                </th>
+                <td class="doc-summary-value">
+                    <span class="v-item">
+                        <span>
+                            @Model.Name
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <th class="doc-summary-field">
+                    DBMS
+                </th>
+                <td class="doc-summary-value">
+                    <span class="v-item">
+                        <span>SQL Server</span>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <div class="doc-description">
+            <p>@Model.Description</p>
+        </div>
+        <div class="doc-section">
+            <div class="doc-section-header">
+                Database Objects
+            </div>
+            <ul class="doc-list">
+                <li>
+                    <span><a>Tables</a></span>
+                    <span class="v-obj-count">(@Model.TablesCount)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

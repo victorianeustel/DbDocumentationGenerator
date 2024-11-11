@@ -1,0 +1,92 @@
+﻿@model Database
+
+@foreach (var table in Model.Tables)
+{
+    <div class="sticky-header">
+        <h1 class="doc-header">
+            <i class="icon2x-table"></i>
+            @table.Name
+        </h1>
+    </div>
+    <table class="doc-summary">
+        <tr>
+            <th class="doc-summary-field">
+                Schema
+            </th>
+            <td class="doc-summary-value">
+                <span class="v-item">
+                    <span>@table.Schema</span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <th class="doc-summary-field">
+                Name
+            </th>
+            <td class="doc-summary-value">
+                <span class="v-item">
+                    <span>
+                        @table.Name
+                    </span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <th class="doc-summary-field">
+                Module
+            </th>
+            <td class="doc-summary-value">
+                <span class="v-item">
+                    <span>@table.Module</span>
+                </span>
+            </td>
+        </tr>
+    </table>
+    var columnHeaders = table.Columns?.FirstOrDefault()?.GetPropertyNames();
+    <div class="doc-section">
+        <span class="v-header">
+            <i class="v-header-icon icon-expand is-expanded"></i>
+            <div class="v-header-slot">
+                Columns
+            </div>
+        </span>
+        <div class="table">
+            <table>
+
+                <tr>
+                    @foreach (var name in columnHeaders)
+                    {
+                        <th>@name</th>
+                    }
+                </tr>
+
+                @foreach (var row in table.Columns)
+                {
+                    <tr>
+                        <td>@row.Index</td>
+                        <td>
+                            @if (row.IsPrimaryKey)
+                            {
+                                <i class="icon-key"></i>
+                            }
+                        </td>
+                        <td>@row.Name</td>
+                        <td>@row.DataType</td>
+                        <td>@row.LengthSize</td>
+                        <td>@row.Precision</td>
+                        <td>@row.Scale</td>
+                        <td>
+                            @if (row.Nullable)
+                            {
+                                <i class="icon-check"></i>
+                            }
+                        </td>
+                        <td>@row.Reference</td>
+                        <td>@row.Description</td>
+
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+}
