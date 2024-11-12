@@ -9,8 +9,7 @@ public static class MappingHelper
 {
     public static Database ColumnQueryResultToDatabase(
         IOptions<DatabaseOptions> databaseOptions,
-        IEnumerable<ColumnQueryResult> queryColumns,
-        IEnumerable<PrimaryKeysResult> queryKeys)
+        IEnumerable<ColumnQueryResult> queryColumns)
     {
         var databaseName = queryColumns.FirstOrDefault()?.DatabaseName;
         var tablesGrouped = queryColumns
@@ -19,7 +18,6 @@ public static class MappingHelper
         var tables = new List<Table>();
         foreach (var table in tablesGrouped)
         {
-            var tableKeys = queryKeys.Where(k => k.TableId == table.Key.TableId);
             var columns = table.Select(c => new Column()
             {
                 Index = c.ColumnId,
@@ -29,8 +27,9 @@ public static class MappingHelper
                 Precision = c.Precision,
                 Scale = c.Scale,
                 Nullable = c.IsNullable,
-                IsPrimaryKey = tableKeys.FirstOrDefault(k => k.ColumnId == c.ColumnId) != null,
+                IsPrimaryKey = c.IsPrimaryKey,
             }).ToList();
+
             var tableResult = new Table()
             {
                 Id = table.Key.TableId,

@@ -8,5 +8,4 @@ public interface IDatabaseService
 {
     public Task<Database> GetDatabaseMetadata();
     public Task<IEnumerable<ColumnQueryResult>> GetColumns();
-    public Task<IEnumerable<PrimaryKeysResult>> GetPrimaryKeys();
 }
