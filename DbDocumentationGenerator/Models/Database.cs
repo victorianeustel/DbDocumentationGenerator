@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using DatabaseMetadataReporting.Models.SQLQueryModels;
 
 namespace DatabaseMetadataReporting.Models;
 
@@ -11,7 +12,7 @@ public class Database
     public IEnumerable<string> Modules => Tables.Select(t => t.Module).Distinct().ToList();
     public int TablesCount => Tables.Count();
 
-    public IEnumerable<string> Views { get; set; } = new List<string>();
+    public IEnumerable<ViewResult> Views { get; set; } = new List<ViewResult>();
     public int ViewsCount => Views.Count();
 
     public IEnumerable<string> Procedures { get; set; } = new List<string>();

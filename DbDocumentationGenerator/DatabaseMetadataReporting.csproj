@@ -21,5 +21,9 @@
   <ItemGroup>
     <Folder Include="wwwroot\assets\" />
     <Folder Include="wwwroot\assets\images\" />
+    <Folder Include="Services\Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Services\Scripts\" />
   </ItemGroup>
 </Project>

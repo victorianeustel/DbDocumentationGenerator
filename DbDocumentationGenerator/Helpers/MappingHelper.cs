@@ -9,7 +9,8 @@ public static class MappingHelper
 {
     public static Database ColumnQueryResultToDatabase(
         IOptions<DatabaseOptions> databaseOptions,
-        IEnumerable<ColumnQueryResult> queryColumns)
+        IEnumerable<ColumnQueryResult> queryColumns,
+        IEnumerable<ViewResult> views)
     {
         var databaseName = queryColumns.FirstOrDefault()?.DatabaseName;
         var tablesGrouped = queryColumns
@@ -42,6 +43,7 @@ public static class MappingHelper
         var databaseResult = new Database() {
             Name = databaseName ?? databaseOptions.Value.Database,
             Host = databaseOptions.Value.Source,
+            Views = views,
             Tables = tables };
 
         return databaseResult;
